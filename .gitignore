@@ -1,6 +1,5 @@
 /vendor/
 
-/tmp/*
-!/tmp/.gitkeep
+/tmp/
 
 /.idea/
