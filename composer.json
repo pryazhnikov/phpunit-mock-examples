@@ -1,0 +1,15 @@
+{
+    "name": "pryazhnikov/phpunit-mock-tests",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "PhpUnitMockDemo\\" : "src/",
+            "PhpUnitMockDemo\\Tests\\" : "tests"
+        }
+    },
+    "require": {
+        "phpunit/phpunit": "9.5",
+        "php": "^7.4"
+    }
+}
