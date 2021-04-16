@@ -1,5 +1,6 @@
 {
     "name": "pryazhnikov/phpunit-mock-tests",
+    "description": "Examples of PHPUnit partial mock usage",
     "type": "project",
     "license": "MIT",
     "autoload": {
@@ -9,7 +10,7 @@
         }
     },
     "require": {
-        "phpunit/phpunit": "9.5",
+        "phpunit/phpunit": "~9.5",
         "php": "^7.4"
     }
 }
