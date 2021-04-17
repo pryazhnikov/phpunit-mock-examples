@@ -8,6 +8,10 @@ on:
 
 jobs:
   build:
+    matrix:
+      phpunit-version:
+        - "8.5"
+        - "9.5"
 
     runs-on: ubuntu-latest
 
@@ -28,6 +32,12 @@ jobs:
 
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
+
+    - name: Update PHPUnit
+      run: composer require phpunit/phpunit:~${{ phpunit-version }}"
+
+    - name: Check PHPUnit version
+      run: vendor/bin/phpunit --version
 
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
