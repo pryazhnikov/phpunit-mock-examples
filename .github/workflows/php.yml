@@ -45,10 +45,11 @@ jobs:
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
 
+    - name: Configuration of Composer stability
+      run: composer config minimum-stability ${{ matrix.composer-min-stability }}
+
     - name: Update PHPUnit
-      run:
-        - composer config minimum-stability ${{ composer-min-stability }}
-        - composer require --with-all-dependencies phpunit/phpunit:~${{ matrix.phpunit-version }}
+      run: composer require --with-all-dependencies phpunit/phpunit:~${{ matrix.phpunit-version }}
 
     - name: Check PHPUnit version
       run: vendor/bin/phpunit --version
