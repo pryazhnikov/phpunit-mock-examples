@@ -13,6 +13,7 @@ abstract class AbstractCommand
 
     public function run(): bool
     {
+        $this->timerStart();
         $success = true;
         try {
             $this->execute();
@@ -21,11 +22,22 @@ abstract class AbstractCommand
             $this->logException($e);
         }
 
+        $this->timerStop();
         return $success;
     }
 
     protected function logException(\Exception $e)
     {
         // Logging
+    }
+
+    protected function timerStart()
+    {
+        // Timer implementation
+    }
+
+    protected function timerStop()
+    {
+        // Timer implementation
     }
 }
