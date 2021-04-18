@@ -1,5 +1,7 @@
 # Partial Mock Examples in PHPUnit
 
+![Build status](https://github.com/pryazhnikov/phpunit-mock-examples/actions/workflows/php.yml/badge.svg)
+
 ## See also
 
 ### Example #1: `setMethods()` of existent methods
