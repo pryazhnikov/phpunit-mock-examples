@@ -11,7 +11,7 @@ class AbstractCommandTest extends TestCase
     {
         // Arrange
         $command = $this->getMockBuilder(AbstractCommand::class)
-            ->setMethods(['execute', 'logException', 'timerStart', 'timerStopt']) // timerStopt is a typo
+            ->onlyMethods(['execute', 'logException', 'timerStart', 'timerStop'])
             ->getMock();
         $command->expects($this->once())->method('execute');
         $command->expects($this->never())->method('logException');
