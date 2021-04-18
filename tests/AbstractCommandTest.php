@@ -11,7 +11,7 @@ class AbstractCommandTest extends TestCase
     {
         // Arrange
         $command = $this->getMockBuilder(AbstractCommand::class)
-            ->onlyMethods(['execute', 'logException', 'timerStart', 'timerStop']) // timerStopt is a typo
+            ->setMethods(['execute', 'logException'])
             ->getMock();
         $command->expects($this->once())->method('execute');
         $command->expects($this->never())->method('logException');
@@ -29,10 +29,7 @@ class AbstractCommandTest extends TestCase
         $runException = new CommandException();
 
         // It's an analogue of $this->getMockBuilder(...)->setMethods([...])->getMock()
-        $command = $this->createPartialMock(
-            AbstractCommand::class,
-            ['execute', 'logException', 'timerStart', 'timerStop'] // timerStopt is a typo
-        );
+        $command = $this->createPartialMock(AbstractCommand::class, ['execute', 'logException']);
         $command->expects($this->once())
             ->method('execute')
             ->will($this->throwException($runException));
